@@ -1,11 +1,9 @@
 const router = require("express").Router();
+const tweets = require("./tweets");
 
-router.get("/tweet/new", (req, res) => {
-  res.render("tweets/tweet-form");
-});
-
+router.use("/tweets", tweets);
 router.get("/", (req, res) => {
-  res.render("tweets/tweet-list");
+  res.redirect("/tweets");
 });
 
 module.exports = router;
